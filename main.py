@@ -1,6 +1,9 @@
 """Console interface for the Student Task Manager."""
 
-from task_manager import add_task, display_tasks, complete_task, delete_task
+from task_manager import (
+    add_task, display_tasks, complete_task, delete_task,
+    load_tasks, save_tasks,
+)
 
 
 def show_menu():
@@ -39,7 +42,7 @@ def handle_delete(tasks):
 
 
 def main():
-    tasks = []
+    tasks = load_tasks()
     while True:
         show_menu()
         choice = input("Choose an option (1-5): ").strip()
@@ -52,6 +55,7 @@ def main():
         elif choice == "4":
             handle_delete(tasks)
         elif choice == "5":
+            save_tasks(tasks)
             print("Goodbye!")
             break
         else:
