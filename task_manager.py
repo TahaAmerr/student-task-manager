@@ -30,3 +30,12 @@ def complete_task(tasks, task_id):
             task["completed"] = True
             return True
     return False
+
+
+def delete_task(tasks, task_id):
+    """Remove the task with the given id. Return True if found."""
+    for task in tasks:
+        if task["id"] == task_id:
+            tasks.remove(task)
+            return True
+    return False
