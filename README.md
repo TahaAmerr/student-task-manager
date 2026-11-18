@@ -1,4 +1,4 @@
 # studenttaskmanager
 Python console Student Task Manager
 
-Project status: Planning
+Project status: Testing
