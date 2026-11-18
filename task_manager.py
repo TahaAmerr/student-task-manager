@@ -22,6 +22,9 @@ def save_tasks(tasks, path=DATA_FILE):
 
 def add_task(tasks, title):
     """Add a new task with the given title and return it."""
+    if not title or not title.strip():
+        raise ValueError("Task title cannot be empty.")
+    title = title.strip()
     next_id = max((task["id"] for task in tasks), default=0) + 1
     task = {
         "id": next_id,
