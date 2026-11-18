@@ -21,3 +21,12 @@ def display_tasks(tasks):
     for task in tasks:
         status = "[x]" if task["completed"] else "[ ]"
         print(f"{task['id']}. {status} {task['title']}")
+
+        
+def complete_task(tasks, task_id):
+    """Mark the task with the given id as completed. Return True if found."""
+    for task in tasks:
+        if task["id"] == task_id:
+            task["completed"] = True
+            return True
+    return False
