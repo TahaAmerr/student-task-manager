@@ -11,3 +11,13 @@ def add_task(tasks, title):
     }
     tasks.append(task)
     return task
+
+    
+def display_tasks(tasks):
+    """Print all tasks, or a message if there are none."""
+    if not tasks:
+        print("No tasks yet.")
+        return
+    for task in tasks:
+        status = "[x]" if task["completed"] else "[ ]"
+        print(f"{task['id']}. {status} {task['title']}")
