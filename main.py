@@ -29,11 +29,15 @@ def handle_display(tasks):
 
 
 def handle_complete(tasks):
-    task_id = int(input("Enter task id to complete: "))
+    try:
+        task_id = int(input("Enter task id to complete: "))
+    except ValueError:
+        print("Invalid id. Please enter a number.")
+        return
     if complete_task(tasks, task_id):
-        print("Task marked as completed.")
+        print(f"Task {task_id} marked as completed.")
     else:
-        print("Task not found.")
+        print(f"No task with id {task_id} was found.")
 
 
 def handle_delete(tasks):
