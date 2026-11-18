@@ -34,7 +34,11 @@ def handle_complete(tasks):
 
 
 def handle_delete(tasks):
-    task_id = int(input("Enter task id to delete: "))
+    try:
+        task_id = int(input("Enter task id to delete: "))
+    except ValueError:
+        print("Invalid id. Please enter a number.")
+        return
     if delete_task(tasks, task_id):
         print("Task deleted.")
     else:
