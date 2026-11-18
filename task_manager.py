@@ -53,6 +53,8 @@ def complete_task(tasks, task_id):
 
 def delete_task(tasks, task_id):
     """Remove the task with the given id. Return True if found."""
+    if task_id < 1:
+        return False
     for task in tasks:
         if task["id"] == task_id:
             tasks.remove(task)
